@@ -14,7 +14,7 @@ function Quick() {
   //Setting Space complexity
   document.getElementById("Space_Worst").innerText = "O(log N)";
 
-  fetch("../Sorting_Visualizer/scripts/info_qck.html")
+  fetch("../sorting-visualizer/scripts/info_qck.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
