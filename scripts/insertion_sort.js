@@ -14,7 +14,7 @@ function Insertion() {
   //Setting Space complexity
   document.getElementById("Space_Worst").innerText = "O(1)";
 
-  fetch("../Sorting_Visualizer/scripts/info_inst.html")
+  fetch("../sorting-visualizer/scripts/info_inst.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
