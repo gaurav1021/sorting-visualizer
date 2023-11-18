@@ -15,7 +15,7 @@ function Bubble() {
   document.getElementById("Space_Worst").innerText = "O(1)";
   //   document.getElementById("cinfo").innerText = "Ω(N)";
 
-  fetch("../info_bubble.html")
+  fetch("../sorting-visualizer/scripts/info_bubble.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
