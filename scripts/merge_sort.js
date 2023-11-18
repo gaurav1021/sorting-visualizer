@@ -14,7 +14,7 @@ function Merge() {
   //Setting Space complexity
   document.getElementById("Space_Worst").innerText = "O(N)";
 
-  fetch("../Sorting_Visualizer/scripts/info_merg.html")
+  fetch("../sorting-visualizer/scripts/info_merg.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
