@@ -14,7 +14,7 @@ function Selection_sort() {
   //Setting Space complexity
   document.getElementById("Space_Worst").innerText = "O(1)";
 
-  fetch("../Sorting_Visualizer/scripts/info_sel.html")
+  fetch("../sorting-visualizer/scripts/info_sel.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
