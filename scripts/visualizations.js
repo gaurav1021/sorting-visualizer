@@ -40,14 +40,14 @@ var c_delay = 0; //This is updated ov every div change so that visualization is 
 function div_update(cont, height, color) {
   window.setTimeout(function () {
     cont.style =
-      " margin:0% " +
+      "margin:0 " +
       margin_size +
       "%; width:" +
       (100 / array_size - 2 * margin_size) +
       "%; height:" +
       height +
-      "%; background-color:" +
-      color +
+      "%; background:" +
+      bar_bg(color) +
       ";";
   }, (c_delay += delay_time));
 }

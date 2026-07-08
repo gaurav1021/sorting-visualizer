@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- 
+<!--
     *****************
     DONE BY:-   Gaurav Mangal
 
@@ -14,245 +14,92 @@
     <title>Sorting Visualizer</title>
 
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@700&display=swap" rel="stylesheet">
-    <style>
-      button {
-        margin: 0 2px;
-      }
-      /* General styles */
-body {
-  font-family: 'Marhey', cursive;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-header {
-  background-color: #000000; /* Brighter color */
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.array-inputs {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.array-inputs p {
-  margin: 0;
-  color: white;
-  font-weight: bold;
-}
-
-input[type="range"] {
-  -webkit-appearance: none;
-  width: 150px;
-  height: 8px;
-  background: #ddd;
-  outline: none;
-  opacity: 0.8;
-  transition: opacity 0.15s ease-in-out;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: #ff4081; /* Matching color */
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  background: #ff4081; /* Matching color */
-  cursor: pointer;
-}
-
-.header_right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-heading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: 30px;
-}
-
-.algos button {
-  background-color: #4caf50; /* Brighter color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s ease-in-out;
-  margin: 0 5px; /* Margin to separate buttons */
-}
-
-.algos button:hover {
-  background-color: #45a049; /* Slightly darker */
-}
-
-.algos button:active {
-  background-color: #388e3c; /* Even darker */
-}
-
-/* Section styles */
-section {
-  padding: 0px;
-
-}
-
-#Info_Cont1, #Info_Cont2 {
-  background-color: #f48fb1; /* Brighter color */
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  margin: 10px;
-}
-
-h3 {
-  color: #d81b60; /* Brighter color */
-  font-size: 18px;
-}
-
-.Complexity_Containers {
-  /* display: flex; */
-  justify-content: space-around;
-}
-
-.Pair_Definitions p {
-  margin: 5px 0;
-}
-
-.Sub_Heading {
-  font-weight: bold;
-}
-
-/* Array container styling */
-#array_container {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 400px;
-  border: 2px solid #ff4081; /* Matching color */
-  border-radius: 10px;
-  background-color: white;
-}
-
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  .header_right {
-    flex-direction: column;
-  }
-
-  .array-inputs {
-    flex-direction: column;
-  }
-}
-.algos > button{
-  /* font-size:small !important; */
-}
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marhey:wght@700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="array-inputs">
-          <p style="padding: 20px 0;">Size of the array:</p>
-          <input
-            id="a_size"
-            type="range"
-            min="20"
-            max="150"
-            step="1" 
-            value="80"
-          />
-          <p>Speed of the algorithm:</p>
-          <input id="a_speed" type="range" min="1" max="5" step="1" value="4" />
-          <button id="a_generate">Generate New Array!</button>
-        </div>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Sorting Visualizer</span>
+      </div>
 
-        <div class="header_right">
-          <p class="nav-heading">Sorting visualizer</p>
-
-          <div class="algos">
-            <button>Bubble</button>
-            <button>Selection</button>
-            <button>Insertion</button>
-            <button>Merge</button>
-            <button>Quick</button>
-            <button>Heap</button>
-          </div>
-        </div>
+      <nav class="algos" aria-label="Choose a sorting algorithm">
+        <button>Bubble</button>
+        <button>Selection</button>
+        <button>Insertion</button>
+        <button>Merge</button>
+        <button>Quick</button>
+        <button>Heap</button>
       </nav>
     </header>
 
-    <section style="background-color: beige;">
-      <div id="Info_Cont1">
-        <h3>TIME COMPLEXITY</h3>
+    <main class="app">
+      <section class="controls">
+        <div class="control">
+          <label for="a_size">
+            Array size <span class="control-val" id="size_val">80</span>
+          </label>
+          <input id="a_size" type="range" min="20" max="150" step="1" value="80" />
+        </div>
 
-        <div class="Complexity_Containers" id="Time_Complexity_Types_Container">
-          <div class="Pair_Definitions">
-            <p class="Sub_Heading">Worst case:</p>
-            <p id="Time_Worst"></p>
-          </div>
+        <div class="control">
+          <label for="a_speed">
+            Speed <span class="control-val" id="speed_val">×4</span>
+          </label>
+          <input id="a_speed" type="range" min="1" max="5" step="1" value="4" />
+        </div>
 
-          <div class="Pair_Definitions">
-            <p class="Sub_Heading">Average case:</p>
-            <p id="Time_Average"></p>
-          </div>
+        <button id="a_generate" class="btn-generate">Generate new array</button>
 
-          <div class="Pair_Definitions">
-            <p class="Sub_Heading">Best case:</p>
-            <p id="Time_Best"></p>
+        <ul class="legend" aria-label="Colour legend">
+          <li><i class="sw idle"></i> Idle</li>
+          <li><i class="sw cmp"></i> Comparing</li>
+          <li><i class="sw act"></i> Swapping</li>
+          <li><i class="sw done"></i> Sorted</li>
+        </ul>
+      </section>
+
+      <section class="stage">
+        <div id="array_container"></div>
+      </section>
+
+      <section class="complexity">
+        <div class="card" id="Info_Cont1">
+          <h3>Time Complexity</h3>
+          <div class="cx-grid" id="Time_Complexity_Types_Container">
+            <div class="cx">
+              <span class="cx-k">Worst case</span>
+              <span class="cx-v" id="Time_Worst">—</span>
+            </div>
+            <div class="cx">
+              <span class="cx-k">Average case</span>
+              <span class="cx-v" id="Time_Average">—</span>
+            </div>
+            <div class="cx">
+              <span class="cx-k">Best case</span>
+              <span class="cx-v" id="Time_Best">—</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="array_container"></div>
-
-      <div id="Info_Cont2">
-        <h3>SPACE COMPLEXITY</h3>
-
-        <div
-          class="Complexity_Containers"
-          id="Space_Complexity_Types_Container"
-        >
-          <div class="Pair_Definitions">
-            <p class="Sub_Heading">Worst case:</p>
-            <p id="Space_Worst"></p>
+        <div class="card" id="Info_Cont2">
+          <h3>Space Complexity</h3>
+          <div class="cx-grid" id="Space_Complexity_Types_Container">
+            <div class="cx">
+              <span class="cx-k">Worst case</span>
+              <span class="cx-v" id="Space_Worst">—</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <div id="cinfo">
-      
-    </div>
+      </section>
+
+      <div id="cinfo"></div>
+    </main>
 
     <script src="./scripts/main.js"></script>
     <!--This should be at the end of body and should be loaded before sorts.js-->
@@ -267,9 +114,9 @@ h3 {
     <script src="./scripts/heap_sort.js"></script>
   </body>
 
-  <!-- 
+  <!--
     *****************
     DONE BY:-   Gaurav Mangal
-    
-    ***************** 
+
+    *****************
 --></html>
